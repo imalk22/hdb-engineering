@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "home": "Home",
+    "machines": "Machines",
+    "about": "About",
+    "contact": "Contact",
+    "showroom": "Visit Showroom"
+  },
+  "cta": {
+    "whatsapp": "WhatsApp Pre-Order",
+    "call": "Call Now",
+    "viewAll": "View All",
+    "getQuote": "Get a Quote",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More"
+  },
+  "home": {
+    "heroTitle": "Sri Lanka's #1 Industrial Machinery Supplier",
+    "heroSubtitle": "Smart Machines to grow your business to the next level",
+    "categoriesTitle": "Our Machine Categories",
+    "bestSellersTitle": "Best Sellers"
+  },
+  "trust": {
+    "machines": "500+ Machines Installed",
+    "delivery": "Island-wide Delivery",
+    "warranty": "1 Year Warranty",
+    "support": "After-Sales Support"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "address": "No.218 Kurunegala Road, Dambulla"
+  }
+}

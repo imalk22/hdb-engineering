@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm install *)",
+      "Bash(uipro init *)",
+      "Bash(uipro --help)",
+      "Bash(cd \"C:\\\\Users\\\\imesh\\\\.claude\" && uipro init --ai claude 2>&1)",
+      "Read(//c/Users/imesh/.claude/**)",
+      "Bash(mkdir -p \"C:/Users/imesh/.claude/skills\")",
+      "Bash(cp -r \"C:/Users/imesh/.claude/.claude/skills/ui-ux-pro-max\" \"C:/Users/imesh/.claude/skills/\")",
+      "Bash(rm -rf \"C:/Users/imesh/.claude/.claude\")",
+      "Bash(claude mcp *)",
+      "Bash(npx skills *)"
+    ]
+  }
+}

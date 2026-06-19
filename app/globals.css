@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Brand palette ── */
+  --color-navy:       #0B1F3A;   /* Primary Deep  — header, footer, strong sections */
+  --color-royal:      #1D4ED8;   /* Primary Action — main buttons */
+  --color-electric:   #3B82F6;   /* Accent Blue   — hover, links */
+  --color-ice:        #F8FAFC;   /* Soft Section  — section backgrounds */
+  --color-slate-dark: #0F172A;   /* Text Strong   — headings */
+  --color-slate:      #475569;   /* Text Normal   — paragraphs */
+  --color-whatsapp:   #22C55E;   /* CTA Emerald   — buy / WhatsApp / order */
+  --color-orange:     #FF6B00;   /* Decorative    — animations, shimmer */
+  --color-red-price:  #EF4444;   /* Alert / urgency / price */
+  --color-amber-warn: #FEF3C7;
+
+  --font-sinhala-body:        var(--font-noto-sinhala), 'Noto Sans Sinhala', system-ui;
+  --font-sinhala-display:     var(--font-noto-sinhala), 'Noto Sans Sinhala', system-ui;
+  --font-sinhala-decorative:  var(--font-noto-sinhala), 'Noto Sans Sinhala', system-ui;
+}
+
+/* ── Sinhala font default weight (overridden by font-bold/extrabold utilities) ── */
+@layer components {
+  .font-sinhala-body,
+  .font-sinhala-display,
+  .font-sinhala-decorative {
+    font-weight: 600;
+  }
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);    opacity: 0.6; }
+  100% { transform: scale(1.6);  opacity: 0; }
+}
+@keyframes slideTrack {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px 4px var(--glow-color, rgba(255,107,0,0.4)); }
+  50%       { box-shadow: 0 0 40px 12px var(--glow-color, rgba(255,107,0,0.6)); }
+}
+@keyframes bounce-icon {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30%       { transform: translateY(-10px) scale(1.15); }
+  60%       { transform: translateY(-4px) scale(1.05); }
+}
+@keyframes text-shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes ripple {
+  0%   { transform: scale(0); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+@keyframes particle-float {
+  0%   { transform: translateY(0) rotate(0deg);   opacity: 0.7; }
+  50%  { transform: translateY(-30px) rotate(180deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 0.7; }
+}
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(255,107,0,0.3); }
+  50%       { border-color: rgba(255,107,0,0.8); }
+}
+
+.animate-fade-up    { animation: fadeUp    0.7s cubic-bezier(.22,1,.36,1) both; }
+.animate-fade-in    { animation: fadeIn    0.6s ease both; }
+.animate-fade-left  { animation: fadeLeft  0.7s cubic-bezier(.22,1,.36,1) both; }
+.animate-fade-right { animation: fadeRight 0.7s cubic-bezier(.22,1,.36,1) both; }
+.animate-scale-in   { animation: scaleIn   0.6s cubic-bezier(.22,1,.36,1) both; }
+.animate-float      { animation: float 4s ease-in-out infinite; }
+.animate-glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
+.animate-bounce-icon{ animation: bounce-icon 2s ease-in-out infinite; }
+.animate-spin-slow  { animation: spin-slow 8s linear infinite; }
+.animate-text-shimmer {
+  background: linear-gradient(90deg, #FF6B00, #FFB347, #FF6B00, #FFD700, #FF6B00);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shimmer 3s linear infinite;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+
+/* ── Marquee (infinite scroll strip) ── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: slideTrack 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Smooth scroll ── */
+html { scroll-behavior: smooth; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Card hover lift ── */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(.22,1,.36,1), box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(10,37,64,0.14);
+}
+
+/* ── Button press ── */
+.btn-press {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-press:hover  { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
+.btn-press:active { transform: translateY(0); }

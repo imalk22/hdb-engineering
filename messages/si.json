@@ -1,0 +1,33 @@
+{
+  "nav": {
+    "home": "මුල් පිටුව",
+    "machines": "යන්ත්‍ර",
+    "about": "අප ගැන",
+    "contact": "සම්බන්ධ වන්න",
+    "showroom": "Showroom බලන්න"
+  },
+  "cta": {
+    "whatsapp": "WhatsApp Pre-Order",
+    "call": "Call Now",
+    "viewAll": "සියල්ල බලන්න",
+    "getQuote": "මිල ගණනාව ලබා ගන්න",
+    "contactUs": "අප හා සම්බන්ධ වන්න",
+    "learnMore": "වැඩිදුර දැනගන්න"
+  },
+  "home": {
+    "heroTitle": "ශ්‍රී ලංකාවේ #1 කාර්මික යන්ත්‍ර සැලකුම",
+    "heroSubtitle": "ඔබේ ව්‍යාපාරය ශ්‍රේෂ්ඨ මට්ටමට ගෙනයාමට Smart Machines",
+    "categoriesTitle": "අපගේ යන්ත්‍ර ප්‍රවර්ග",
+    "bestSellersTitle": "වැඩිම ජනප්‍රිය යන්ත්‍ර"
+  },
+  "trust": {
+    "machines": "500+ යන්ත්‍ර ස්ථාපිත",
+    "delivery": "දිවයින පුරා බෙදාහැරීම",
+    "warranty": "වසරක වශීමිය",
+    "support": "After-Sales සේවාව"
+  },
+  "footer": {
+    "rights": "සියලු හිමිකම් ඇවිරිණි",
+    "address": "No.218 කුරුණෑගල පාර, දඹුල්ල"
+  }
+}
