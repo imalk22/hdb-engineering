@@ -13,7 +13,7 @@ export default function IndustryAppsSection() {
           <span className="inline-block bg-navy/10 text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">
             🏭 Industry Applications
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy font-sinhala-display leading-tight">
+          <h2 className="text-xl sm:text-4xl font-extrabold text-navy font-sinhala-display leading-tight">
             මෙම යන්ත්‍රය මගින් ඔබට පහසුවෙන්<br className="hidden sm:block" /> ඇසුරුම් කළ හැකි දෑ:
           </h2>
         </div>

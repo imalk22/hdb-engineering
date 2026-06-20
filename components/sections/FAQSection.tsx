@@ -9,7 +9,7 @@ export default function FAQSection() {
           <span className="inline-block bg-navy/10 text-navy text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3">
             ❓ Doubt Killer
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy font-sinhala-display leading-tight">
+          <h2 className="text-xl sm:text-4xl font-extrabold text-navy font-sinhala-display leading-tight">
             නිතර අසන ප්‍රශ්ණ (FAQ)
           </h2>
         </div>
