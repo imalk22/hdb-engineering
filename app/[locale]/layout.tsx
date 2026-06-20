@@ -9,6 +9,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import StickyMobileBar from '@/components/layout/StickyMobileBar'
 import IntroLoader from '@/components/layout/IntroLoader'
+import LanguagePopup from '@/components/layout/LanguagePopup'
 import '@/app/globals.css'
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default async function LocaleLayout({
       <body className="min-h-screen bg-ice text-gray-900 pb-16 lg:pb-0 scroll-smooth">
         <NextIntlClientProvider messages={messages}>
           <IntroLoader />
+          <LanguagePopup />
           <Navbar locale={locale} />
           <main>{children}</main>
           <Footer locale={locale} />
