@@ -13,7 +13,7 @@ export default function Navbar({ locale }: { locale: string }) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-2xl border-b border-gray-200/80 shadow-[0_2px_20px_rgba(0,0,0,0.08)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-24 flex items-center justify-between gap-4 sm:gap-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-24 flex items-center justify-between gap-4 sm:gap-6">
 
         {/* ── Logo ── */}
         <Link href={base} className="flex-shrink-0 transition-transform duration-300 hover:scale-105">

@@ -144,9 +144,9 @@ export default function AboutPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative bg-navy overflow-hidden pt-24 pb-36 sm:pt-36 sm:pb-52 px-4">
         <motion.div animate={{x:[0,40,0],y:[0,-30,0]}} transition={{duration:10,repeat:Infinity,ease:'easeInOut'}}
-          className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-orange/10 rounded-full blur-3xl pointer-events-none"/>
+          className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-royal/20 rounded-full blur-[120px] pointer-events-none"/>
         <motion.div animate={{x:[0,-30,0],y:[0,20,0]}} transition={{duration:12,repeat:Infinity,ease:'easeInOut'}}
-          className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none"/>
+          className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[100px] pointer-events-none"/>
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{backgroundImage:'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)',backgroundSize:'60px 60px'}}/>
 
@@ -365,7 +365,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-14">
             <span className="inline-block bg-whatsapp/10 text-whatsapp text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">Why Choose Us</span>
-            <h2 className="text-xs sm:text-5xl font-extrabold text-navy mb-3 font-sinhala-body whitespace-nowrap">ඇයි HDB විශ්වාස කළ යුත්තේ?</h2>
+            <h2 className="text-base sm:text-5xl font-extrabold text-navy mb-3 font-sinhala-body">ඇයි HDB විශ්වාස කළ යුත්තේ?</h2>
           </Reveal>
           <div className="grid grid-cols-3 gap-1.5 sm:gap-5">
             {[

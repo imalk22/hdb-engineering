@@ -134,16 +134,11 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-navy overflow-hidden pt-24 pb-10 sm:pt-32 sm:pb-52 px-4">
-        {/* Subtle background orbs */}
-        <motion.div
-          animate={{ x: [0, 24, 0], y: [0, -16, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-orange/8 rounded-full blur-3xl pointer-events-none" />
-        <motion.div
-          animate={{ x: [0, -16, 0], y: [0, 20, 0] }}
-          transition={{ duration: 13, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-navy">
+      <section className="relative overflow-hidden pt-24 pb-4 sm:pt-32 sm:pb-52 px-4">
+        {/* Background orbs */}
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-royal/20 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[100px] pointer-events-none" />
 
         {/* Grid mesh */}
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
@@ -192,9 +187,8 @@ export default function ContactPage() {
 
       </section>
 
-      {/* ── STAT CARDS ─────────────────────────────────────── */}
       {/* ── CONTACT GLASS CARDS ────────────────────────────── */}
-      <section className="relative z-10 max-w-5xl mx-auto px-4 mt-4 sm:-mt-36 pb-4">
+      <section className="relative z-10 max-w-5xl mx-auto px-4 pb-6 sm:-mt-36 sm:pb-4">
         <div className="grid grid-cols-4 gap-2 sm:gap-4">
           {CONTACT_CARDS.map((c, i) => (
             <motion.a
@@ -232,6 +226,7 @@ export default function ContactPage() {
           ))}
         </div>
       </section>
+      </div>{/* end bg-navy wrapper */}
 
       {/* ══════════════════════════════════════════════════
           FORM + RIGHT COLUMN

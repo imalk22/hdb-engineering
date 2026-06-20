@@ -31,6 +31,21 @@ function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
   return <span ref={ref}>{display.toLocaleString()}{suffix}</span>
 }
 
+function ExpandableQuote({ text, className = '' }: { text: string; className?: string }) {
+  const [expanded, setExpanded] = useState(false)
+  return (
+    <div>
+      <p className={`${className} ${expanded ? '' : 'line-clamp-1'}`}>{text}</p>
+      {!expanded && (
+        <button onClick={(e) => { e.stopPropagation(); setExpanded(true) }}
+          className="text-navy text-[10px] sm:text-xs font-bold mt-1 hover:underline">
+          See more
+        </button>
+      )}
+    </div>
+  )
+}
+
 function Stars({ count = 5, filled = 5 }: { count?: number; filled?: number }) {
   return (
     <div className="flex gap-0.5">
@@ -271,9 +286,9 @@ export default function ClientsPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative bg-navy overflow-hidden pt-24 pb-36 sm:pt-36 sm:pb-52 px-4">
         <motion.div animate={{ x: [0,30,0], y: [0,-20,0] }} transition={{ duration:9,repeat:Infinity,ease:'easeInOut' }}
-          className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-orange/10 rounded-full blur-3xl pointer-events-none"/>
+          className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-royal/20 rounded-full blur-[120px] pointer-events-none"/>
         <motion.div animate={{ x: [0,-20,0], y: [0,15,0] }} transition={{ duration:11,repeat:Infinity,ease:'easeInOut' }}
-          className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-whatsapp/10 rounded-full blur-3xl pointer-events-none"/>
+          className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[100px] pointer-events-none"/>
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{ backgroundImage:'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)',backgroundSize:'60px 60px' }}/>
 
@@ -335,7 +350,7 @@ export default function ClientsPage() {
             <span className="inline-flex items-center gap-2 bg-navy text-white text-xs font-bold px-5 py-2 rounded-full uppercase tracking-widest mb-4">
               👥 OUR HAPPY CUSTOMERS
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-navy font-sinhala-body leading-tight">
+            <h2 className="text-sm sm:text-3xl font-bold text-navy font-sinhala-body leading-tight">
               HDB යන්ත්‍රෝපකරණ භාවිතයෙන් සාර්ථක වූණු<br className="hidden sm:block"/> ශ්‍රී ලාංකික ව්‍යාපාරිකයින්
             </h2>
             <p className="text-gray-500 mt-3 font-sinhala-body">
@@ -352,7 +367,22 @@ export default function ClientsPage() {
                   transition={{ type: 'spring', stiffness: 280, damping: 20 }}
                   className="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 h-full flex flex-col"
                 >
-                  <div className="relative w-full flex-shrink-0" style={{ paddingBottom: '56.25%' }}>
+                  {/* Mobile: thumbnail → YouTube */}
+                  <a href={`https://www.youtube.com/watch?v=${story.videoId}`} target="_blank" rel="noopener noreferrer"
+                    className="sm:hidden block relative w-full flex-shrink-0" style={{ paddingBottom: '56.25%' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`https://img.youtube.com/vi/${story.videoId}/mqdefault.jpg`} alt={story.name}
+                      className="absolute inset-0 w-full h-full object-cover"/>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                      <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+                        <svg className="w-4 h-4 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
+                  {/* Desktop: iframe */}
+                  <div className="hidden sm:block relative w-full flex-shrink-0" style={{ paddingBottom: '56.25%' }}>
                     <iframe
                       className="absolute inset-0 w-full h-full"
                       src={`https://www.youtube.com/embed/${story.videoId}?rel=0&modestbranding=1`}
@@ -369,7 +399,7 @@ export default function ClientsPage() {
                     </p>
                     <p className="text-gray-400 text-xs mb-3">({story.industry})</p>
                     <Stars filled={story.stars} />
-                    <p className="text-gray-700 text-sm font-sinhala-body font-semibold leading-relaxed mt-3">{story.quote}</p>
+                    <ExpandableQuote text={story.quote} className="text-gray-700 text-sm font-sinhala-body font-semibold leading-relaxed mt-3" />
                   </div>
                 </motion.div>
               </Reveal>
@@ -394,10 +424,22 @@ export default function ClientsPage() {
                   transition={{ type: 'spring', stiffness: 300, damping: 22 }}
                   className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 h-full flex flex-col"
                 >
-                  <div
-                    className="relative w-full flex-shrink-0 overflow-hidden"
-                    style={{ paddingTop: '177.78%' }}
-                  >
+                  {/* Mobile: thumbnail → YouTube Shorts */}
+                  <a href={`https://www.youtube.com/shorts/${story.videoId}`} target="_blank" rel="noopener noreferrer"
+                    className="sm:hidden block relative w-full flex-shrink-0 overflow-hidden" style={{ paddingTop: '177.78%' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`https://img.youtube.com/vi/${story.videoId}/mqdefault.jpg`} alt={story.name}
+                      className="absolute inset-0 w-full h-full object-cover"/>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                      <div className="w-7 h-7 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+                        <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
+                  {/* Desktop: iframe */}
+                  <div className="hidden sm:block relative w-full flex-shrink-0 overflow-hidden" style={{ paddingTop: '177.78%' }}>
                     <iframe
                       className="absolute top-0 left-0 w-full h-full"
                       src={`https://www.youtube.com/embed/${story.videoId}?rel=0&modestbranding=1`}
@@ -412,7 +454,7 @@ export default function ClientsPage() {
                       {story.name}
                     </p>
                     {story.location && <p className="text-gray-400 text-xs mt-0.5">📍 {story.location}</p>}
-                    <p className="text-gray-600 text-xs font-sinhala-body font-semibold leading-relaxed mt-2 line-clamp-3">{story.quote}</p>
+                    <ExpandableQuote text={story.quote} className="text-gray-600 text-xs font-sinhala-body font-semibold leading-relaxed mt-2" />
                   </div>
                 </motion.div>
               </Reveal>
