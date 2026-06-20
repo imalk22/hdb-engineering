@@ -343,15 +343,15 @@ export default function AboutPage() {
             <h2 className="text-xl sm:text-5xl font-extrabold text-navy mb-3">Our Machine Categories</h2>
             <p className="text-gray-500 text-lg font-sinhala-body">ඔබේ ව්‍යාපාරය සඳහා නිවැරදි යන්ත්‍රය</p>
           </Reveal>
-          <div className="grid grid-cols-4 gap-1.5 sm:gap-5">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5">
             {SERVICES.map((s,i) => (
               <Reveal key={s.cat} delay={i*.06} variants={scaleIn}>
                 <motion.div whileHover={{y:-6,boxShadow:'0 20px 50px rgba(10,37,64,.1)'}}
                   transition={{type:'spring',stiffness:300,damping:20}}
-                  className="group bg-ice hover:bg-navy rounded-xl sm:rounded-2xl p-1.5 sm:p-5 border border-gray-100 cursor-default transition-colors duration-300 h-full">
-                  <span className="text-lg sm:text-4xl mb-0.5 sm:mb-3 block group-hover:scale-110 transition-transform duration-300">{s.icon}</span>
-                  <h3 className="font-extrabold text-navy group-hover:text-white text-[8px] sm:text-base transition-colors">{s.cat}</h3>
-                  <p className="hidden sm:block text-gray-400 group-hover:text-blue-200 text-xs font-sinhala-body mb-2 transition-colors">{s.si}</p>
+                  className="group bg-ice hover:bg-navy rounded-xl sm:rounded-2xl p-3 sm:p-5 border border-gray-100 cursor-default transition-colors duration-300 h-full">
+                  <span className="text-2xl sm:text-4xl mb-1 sm:mb-3 block group-hover:scale-110 transition-transform duration-300">{s.icon}</span>
+                  <h3 className="font-extrabold text-navy group-hover:text-white text-xs sm:text-base transition-colors">{s.cat}</h3>
+                  <p className="text-gray-400 group-hover:text-blue-200 text-[9px] sm:text-xs font-sinhala-body sm:mb-2 transition-colors mt-0.5">{s.si}</p>
                   <p className="hidden sm:block text-gray-600 group-hover:text-blue-100 text-xs leading-relaxed transition-colors">{s.desc}</p>
                 </motion.div>
               </Reveal>
@@ -365,7 +365,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <Reveal className="text-center mb-14">
             <span className="inline-block bg-whatsapp/10 text-whatsapp text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">Why Choose Us</span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy mb-3 font-sinhala-body">ඇයි HDB විශ්වාස කළ යුත්තේ?</h2>
+            <h2 className="text-xs sm:text-5xl font-extrabold text-navy mb-3 font-sinhala-body whitespace-nowrap">ඇයි HDB විශ්වාස කළ යුත්තේ?</h2>
           </Reveal>
           <div className="grid grid-cols-3 gap-1.5 sm:gap-5">
             {[

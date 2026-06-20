@@ -134,7 +134,7 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════ */}
-      <section className="relative bg-navy overflow-hidden pt-24 pb-36 sm:pt-32 sm:pb-52 px-4">
+      <section className="relative bg-navy overflow-hidden pt-24 pb-10 sm:pt-32 sm:pb-52 px-4">
         {/* Subtle background orbs */}
         <motion.div
           animate={{ x: [0, 24, 0], y: [0, -16, 0] }}
@@ -194,7 +194,7 @@ export default function ContactPage() {
 
       {/* ── STAT CARDS ─────────────────────────────────────── */}
       {/* ── CONTACT GLASS CARDS ────────────────────────────── */}
-      <section className="relative z-10 max-w-5xl mx-auto px-4 -mt-36 pb-4">
+      <section className="relative z-10 max-w-5xl mx-auto px-4 mt-4 sm:-mt-36 pb-4">
         <div className="grid grid-cols-4 gap-2 sm:gap-4">
           {CONTACT_CARDS.map((c, i) => (
             <motion.a
@@ -218,12 +218,12 @@ export default function ContactPage() {
                 style={{ textShadow: '0 1px 8px rgba(0,0,0,0.55), 0 0 24px rgba(0,0,0,0.35)' }}>
                 {c.title}
               </p>
-              <p className={`hidden sm:block relative text-sm font-semibold font-sinhala-body mb-3 ${c.accent}`}
+              <p className={`relative text-[8px] sm:text-sm font-semibold font-sinhala-body mb-0.5 sm:mb-3 ${c.accent}`}
                 style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>
                 {c.titleSi}
               </p>
               {c.lines.map((line) => (
-                <p key={line} className="hidden sm:block relative text-white font-semibold text-sm leading-relaxed text-center"
+                <p key={line} className="relative text-white font-semibold text-[7px] sm:text-sm leading-snug text-center truncate"
                   style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' }}>
                   {line}
                 </p>

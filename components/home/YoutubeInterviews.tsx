@@ -68,8 +68,28 @@ export default function YoutubeInterviews({ locale }: { locale: string }) {
               {/* Orange top accent line */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-orange to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
-              {/* 16:9 iframe */}
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              {/* Mobile: thumbnail → opens YouTube app */}
+              <a href={`https://www.youtube.com/watch?v=${video.id}`} target="_blank" rel="noopener noreferrer"
+                className="sm:hidden block relative w-full">
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                    alt={video.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/25">
+                    <div className="w-8 h-8 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+                      <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Desktop: embedded iframe */}
+              <div className="hidden sm:block relative w-full" style={{ paddingBottom: '56.25%' }}>
                 <iframe
                   className="absolute inset-0 w-full h-full"
                   src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1`}
