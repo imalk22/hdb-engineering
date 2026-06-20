@@ -273,26 +273,36 @@ export default function AboutPage() {
           </Reveal>
 
           <div className="relative">
-            {/* Center line */}
-            <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange via-navy to-blue-300"/>
+            {/* Mobile left line */}
+            <div className="absolute left-7 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange via-navy to-blue-300 lg:hidden"/>
+            {/* Desktop center line */}
+            <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange via-navy to-blue-300 hidden lg:block"/>
 
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-8">
               {TIMELINE.map((item,i) => (
                 <Reveal key={item.year} delay={i*.1}>
-                  <div className={`flex flex-col lg:flex-row items-center gap-6 ${i%2===0?'lg:flex-row':'lg:flex-row-reverse'}`}>
-                    {/* Text side */}
-                    <div className={`flex-1 ${i%2===0?'lg:text-right':''}`}>
-                      <div className={`bg-ice rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${i%2===0?'lg:ml-auto':''} max-w-sm`}>
+                  {/* Mobile: left-aligned with bubble on the line */}
+                  <div className="flex items-start gap-3 lg:hidden">
+                    <div className="flex-shrink-0 w-14 h-14 bg-navy rounded-full flex items-center justify-center shadow-xl z-10 border-4 border-white relative">
+                      <span className="text-white font-extrabold text-xs text-center leading-tight">{item.year}</span>
+                    </div>
+                    <div className="bg-ice rounded-2xl p-4 border border-gray-100 shadow-sm flex-1 relative z-10">
+                      <h3 className="font-extrabold text-navy text-base mb-1">{item.title}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                  {/* Desktop: alternating */}
+                  <div className={`hidden lg:flex items-center gap-6 ${i%2===0?'flex-row':'flex-row-reverse'}`}>
+                    <div className={`flex-1 ${i%2===0?'text-right':''}`}>
+                      <div className={`bg-ice rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${i%2===0?'ml-auto':''} max-w-sm`}>
                         <h3 className="font-extrabold text-navy text-lg mb-1">{item.title}</h3>
                         <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
-                    {/* Year bubble */}
                     <div className="flex-shrink-0 w-16 h-16 bg-navy rounded-full flex items-center justify-center shadow-xl z-10 border-4 border-white">
                       <span className="text-white font-extrabold text-xs text-center leading-tight">{item.year}</span>
                     </div>
-                    {/* Empty side */}
-                    <div className="flex-1 hidden lg:block"/>
+                    <div className="flex-1"/>
                   </div>
                 </Reveal>
               ))}
@@ -314,9 +324,9 @@ export default function AboutPage() {
                 <motion.div whileHover={{y:-8}} transition={{type:'spring',stiffness:300,damping:20}}
                   className="bg-white/10 backdrop-blur border border-white/15 rounded-2xl sm:rounded-3xl p-2 sm:p-7 h-full">
                   <div className="text-xl sm:text-5xl mb-1 sm:mb-4">{v.icon}</div>
-                  <h3 className="text-white font-extrabold text-[10px] sm:text-xl mb-0 sm:mb-0.5">{v.title}</h3>
-                  <p className="hidden sm:block text-blue-300 text-xs font-sinhala-body mb-3">{v.titleSi}</p>
-                  <p className="hidden sm:block text-blue-100 text-sm leading-relaxed mb-2">{v.desc}</p>
+                  <h3 className="text-white font-extrabold text-[10px] sm:text-xl mb-0.5">{v.title}</h3>
+                  <p className="hidden sm:block text-blue-300 text-xs font-sinhala-body mb-2">{v.titleSi}</p>
+                  <p className="text-blue-100 text-[8px] sm:text-sm leading-relaxed mb-1 sm:mb-2">{v.desc}</p>
                   <p className="hidden sm:block text-blue-300 text-xs font-sinhala-body leading-relaxed">{v.si}</p>
                 </motion.div>
               </Reveal>
@@ -330,7 +340,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
             <span className="inline-block bg-navy/8 text-navy text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">What We Offer</span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy mb-3">Our Machine Categories</h2>
+            <h2 className="text-xl sm:text-5xl font-extrabold text-navy mb-3">Our Machine Categories</h2>
             <p className="text-gray-500 text-lg font-sinhala-body">ඔබේ ව්‍යාපාරය සඳහා නිවැරදි යන්ත්‍රය</p>
           </Reveal>
           <div className="grid grid-cols-4 gap-1.5 sm:gap-5">
@@ -372,8 +382,8 @@ export default function AboutPage() {
                   className="bg-white rounded-xl sm:rounded-2xl p-1.5 sm:p-5 border border-gray-100 shadow-sm">
                   <span className="text-xl sm:text-3xl mb-0.5 sm:mb-3 block">{c.icon}</span>
                   <h3 className="font-extrabold text-navy text-[9px] sm:text-base">{c.t}</h3>
-                  <p className="hidden sm:block text-gray-400 text-xs font-sinhala-body mb-2">{c.si}</p>
-                  <p className="hidden sm:block text-gray-600 text-sm leading-relaxed">{c.d}</p>
+                  <p className="text-gray-400 text-[7px] sm:text-xs font-sinhala-body truncate">{c.si}</p>
+                  <p className="hidden sm:block text-gray-600 text-sm leading-relaxed mt-1">{c.d}</p>
                 </motion.div>
               </Reveal>
             ))}

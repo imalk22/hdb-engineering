@@ -39,7 +39,7 @@ export default function HeroSection({ locale = 'en' }: { locale?: string }) {
         <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-royal/10 rounded-full blur-[80px]" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24 w-full">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-6 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-24 w-full">
         <div className="grid grid-cols-2 gap-2 sm:gap-12 lg:gap-20 items-center">
 
           {/* ═══ LEFT: Copy ═══ */}
@@ -64,7 +64,7 @@ export default function HeroSection({ locale = 'en' }: { locale?: string }) {
             </div>
 
             {/* H1 */}
-            <h1 className={`animate-fade-up delay-100 font-extrabold text-white tracking-tight mb-1 sm:mb-6 font-sinhala-body ${si ? 'text-[10px] sm:text-[38px] lg:text-[46px] leading-[1.2] sm:leading-[1.1]' : 'text-[11px] sm:text-[42px] lg:text-[52px] leading-[1.2] sm:leading-[1.1]'}`}>
+            <h1 className={`animate-fade-up delay-100 font-extrabold text-white tracking-tight mb-1 sm:mb-6 font-sinhala-body ${si ? 'text-[13px] sm:text-[38px] lg:text-[46px] leading-[1.2] sm:leading-[1.1]' : 'text-[14px] sm:text-[42px] lg:text-[52px] leading-[1.2] sm:leading-[1.1]'}`}>
               {si
                 ? <>ඉහළ කාර්යසාධනය සහිත <span className="text-orange">යන්ත්‍ර</span> නවීන ව්‍යාපාර සඳහා</>
                 : <>High-Performance <span className="text-orange">Machines</span> for Modern Businesses</>
@@ -143,7 +143,7 @@ export default function HeroSection({ locale = 'en' }: { locale?: string }) {
                 alt="Automatic Liquid Filling Machine"
                 width={600}
                 height={520}
-                className="w-full h-[100px] sm:h-[420px] object-contain drop-shadow-2xl animate-float"
+                className="w-full h-[130px] sm:h-[420px] object-contain drop-shadow-2xl animate-float"
                 priority
               />
               <p className="text-center text-white font-bold text-[7px] sm:text-base mt-1 sm:mt-3 tracking-tight font-sinhala-body">

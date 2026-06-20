@@ -166,7 +166,7 @@ export default function ContactPage() {
           <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.2 }}
-            className="text-blue-200/80 text-sm sm:text-lg mx-auto mb-10 font-sinhala-body leading-relaxed whitespace-nowrap">
+            className="text-blue-200/80 text-sm sm:text-lg mx-auto mb-6 sm:mb-10 font-sinhala-body leading-relaxed">
             ඔබේ ව්‍යාපාරය ඉදිරියට ගෙනයාමට HDB Engineering Lanka සූදානම්
           </motion.p>
 
@@ -223,7 +223,7 @@ export default function ContactPage() {
                 {c.titleSi}
               </p>
               {c.lines.map((line) => (
-                <p key={line} className="relative text-white font-semibold text-[7px] sm:text-sm leading-relaxed text-center break-all"
+                <p key={line} className="hidden sm:block relative text-white font-semibold text-sm leading-relaxed text-center"
                   style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' }}>
                   {line}
                 </p>
