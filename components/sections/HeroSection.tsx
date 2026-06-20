@@ -64,7 +64,7 @@ export default function HeroSection({ locale = 'en' }: { locale?: string }) {
             </div>
 
             {/* H1 */}
-            <h1 className={`animate-fade-up delay-100 font-extrabold text-white tracking-tight mb-1 sm:mb-6 font-sinhala-body ${si ? 'text-[14px] sm:text-[38px] lg:text-[46px] leading-[1.2] sm:leading-[1.1]' : 'text-[16px] sm:text-[42px] lg:text-[52px] leading-[1.2] sm:leading-[1.1]'}`}>
+            <h1 className={`animate-fade-up delay-100 font-extrabold text-white tracking-tight mb-1 sm:mb-6 font-sinhala-body ${si ? 'text-[16px] sm:text-[38px] lg:text-[46px] leading-[1.2] sm:leading-[1.1]' : 'text-[20px] sm:text-[42px] lg:text-[52px] leading-[1.2] sm:leading-[1.1]'}`}>
               {si
                 ? <>ඉහළ කාර්යසාධනය සහිත <span className="text-orange">යන්ත්‍ර</span> නවීන ව්‍යාපාර සඳහා</>
                 : <>High-Performance <span className="text-orange">Machines</span> for Modern Businesses</>
@@ -143,10 +143,10 @@ export default function HeroSection({ locale = 'en' }: { locale?: string }) {
                 alt="Automatic Liquid Filling Machine"
                 width={600}
                 height={520}
-                className="w-full h-[150px] sm:h-[420px] object-contain drop-shadow-2xl animate-float"
+                className="w-full h-[200px] sm:h-[420px] object-contain drop-shadow-2xl animate-float"
                 priority
               />
-              <p className="text-center text-white font-bold text-[9px] sm:text-base mt-1 sm:mt-3 tracking-tight font-sinhala-body">
+              <p className="text-center text-white font-bold text-[11px] sm:text-base mt-1 sm:mt-3 tracking-tight font-sinhala-body">
                 {si ? 'ස්වයංක්‍රීය ද්‍රව පිරවීම් යන්ත්‍රය' : 'Automatic Liquid Filling & Packing Machine'}
               </p>
               {/* ── Price card ── */}
