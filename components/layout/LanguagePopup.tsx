@@ -10,7 +10,11 @@ export default function LanguagePopup() {
 
   useEffect(() => {
     const chosen = localStorage.getItem('hdb-lang-chosen')
-    if (!chosen) setVisible(true)
+    if (!chosen) {
+      // Wait for IntroLoader to finish (3s display + 0.7s fade-out)
+      const t = setTimeout(() => setVisible(true), 3800)
+      return () => clearTimeout(t)
+    }
   }, [])
 
   function choose(lang: 'en' | 'si') {
@@ -22,7 +26,7 @@ export default function LanguagePopup() {
   if (!visible) return null
 
   return (
-    <div className="lg:hidden fixed inset-0 z-[300] bg-navy flex flex-col items-center justify-center px-6"
+    <div className="lg:hidden fixed inset-0 z-[10000] bg-navy flex flex-col items-center justify-center px-6"
       style={{ backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)', backgroundSize: '60px 60px' }}>
 
       {/* Blue glow orbs */}
