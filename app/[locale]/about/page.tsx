@@ -312,8 +312,13 @@ export default function AboutPage() {
       </section>
 
       {/* ── MISSION / VISION / VALUES ─────────────────────── */}
-      <section className="py-20 px-4 bg-navy">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 bg-navy relative overflow-hidden">
+        {/* Blue design */}
+        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-royal/20 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{ backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
             <span className="inline-block bg-orange text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">What Drives Us</span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Our Core Principles</h2>

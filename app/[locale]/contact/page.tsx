@@ -364,12 +364,16 @@ export default function ContactPage() {
             </div>
 
             {/* Quick response */}
-            <div className="bg-navy rounded-2xl p-7 text-white">
-              <h3 className="font-extrabold text-xl mb-2">⚡ Quick Response</h3>
-              <p className="text-blue-200/80 text-sm font-sinhala-body leading-relaxed mb-5">
+            <div className="bg-navy rounded-2xl p-7 text-white relative overflow-hidden">
+              <div className="absolute -top-20 -left-20 w-64 h-64 bg-royal/30 rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-electric/20 rounded-full blur-[80px] pointer-events-none" />
+              <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
+                style={{ backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
+              <h3 className="relative font-extrabold text-xl mb-2">⚡ Quick Response</h3>
+              <p className="relative text-blue-200/80 text-sm font-sinhala-body leading-relaxed mb-5">
                 WhatsApp හෝ Call කළ පසු විනාඩි 30ක් ඇතුළත අපේ Team Member කෙනෙක් ඔබව Contact කරයි.
               </p>
-              <div className="grid grid-cols-3 gap-3 text-center">
+              <div className="relative grid grid-cols-3 gap-3 text-center">
                 {[['<30min','Reply Time'],['24/7','WhatsApp'],['Island','Coverage']].map(([num, label]) => (
                   <div key={label} className="bg-white/8 rounded-xl p-3.5 border border-white/10">
                     <p className="font-extrabold text-orange text-lg leading-none">{num}</p>

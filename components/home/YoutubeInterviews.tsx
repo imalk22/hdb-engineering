@@ -27,14 +27,12 @@ export default function YoutubeInterviews({ locale }: { locale: string }) {
 
   return (
     <section className="py-8 sm:py-24 px-4 bg-navy relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none" />
-      {/* Dot grid */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{ backgroundImage: 'radial-gradient(white 1px,transparent 1px)', backgroundSize: '28px 28px' }}
-      />
+      {/* Background orbs */}
+      <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-royal/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[100px] pointer-events-none" />
+      {/* Line grid */}
+      <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Header */}
