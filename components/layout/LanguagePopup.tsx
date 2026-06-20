@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function LanguagePopup() {
   const [visible, setVisible] = useState(false)
@@ -11,7 +11,7 @@ export default function LanguagePopup() {
   useEffect(() => {
     const chosen = localStorage.getItem('hdb-lang-chosen')
     if (!chosen) {
-      // Wait for IntroLoader to finish (3s display + 0.7s fade-out)
+      // Show after IntroLoader finishes (3s + 0.7s fade = 3.8s)
       const t = setTimeout(() => setVisible(true), 3800)
       return () => clearTimeout(t)
     }
@@ -23,49 +23,37 @@ export default function LanguagePopup() {
     router.push(`/${lang}`)
   }
 
-  if (!visible) return null
-
   return (
-    <div className="lg:hidden fixed inset-0 z-[10000] bg-navy flex flex-col items-center justify-center px-6"
-      style={{ backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)', backgroundSize: '60px 60px' }}>
-
-      {/* Blue glow orbs */}
-      <div className="absolute -top-20 -left-20 w-80 h-80 bg-royal/30 rounded-full blur-[80px] pointer-events-none" />
-      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-electric/20 rounded-full blur-[80px] pointer-events-none" />
-
-      <div className="relative flex flex-col items-center w-full max-w-xs">
-        {/* Logo */}
-        <Image src="/logo.png" alt="HDB Engineering Lanka" width={220} height={70}
-          className="h-16 w-auto mb-8 drop-shadow-xl" priority />
-
-        {/* Welcome text */}
-        <p className="text-orange text-xs font-bold uppercase tracking-widest mb-3">Welcome · ආයුබෝවන්</p>
-        <h2 className="text-white text-2xl font-extrabold text-center leading-tight mb-1">
-          Choose Your Language
-        </h2>
-        <p className="text-blue-200 text-base font-sinhala-body text-center mb-10">
-          ඔබේ භාෂාව තෝරන්න
-        </p>
-
-        {/* Language buttons */}
-        <div className="flex flex-col gap-4 w-full">
-          <button onClick={() => choose('en')}
-            className="w-full flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-navy font-extrabold text-lg py-4 rounded-2xl shadow-2xl active:scale-95 transition-transform">
-            <span className="text-2xl">🇬🇧</span>
-            English
-          </button>
-          <button onClick={() => choose('si')}
-            className="w-full flex items-center justify-center gap-3 bg-orange hover:bg-orange/90 text-white font-extrabold text-lg py-4 rounded-2xl shadow-2xl active:scale-95 transition-transform font-sinhala-body">
-            <span className="text-2xl">🇱🇰</span>
-            සිංහල
-          </button>
-        </div>
-
-        {/* HDB tagline */}
-        <p className="text-blue-300/60 text-xs text-center mt-8 font-sinhala-body leading-relaxed">
-          HDB Engineering Lanka<br/>Trust Us to Build Your Future
-        </p>
-      </div>
-    </div>
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 24 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:hidden fixed bottom-[76px] left-4 right-4 z-[10000]"
+        >
+          <div className="bg-navy/75 backdrop-blur-2xl border border-white/20 rounded-2xl p-4 shadow-[0_8px_40px_rgba(0,0,0,0.45)]">
+            <p className="text-white/60 text-[11px] font-bold text-center uppercase tracking-widest mb-3">
+              Choose Language · භාෂාව තෝරන්න
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => choose('en')}
+                className="flex-1 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold py-3.5 rounded-xl text-sm transition-colors active:scale-95 flex items-center justify-center gap-2"
+              >
+                <span className="text-lg">🇬🇧</span> English
+              </button>
+              <button
+                onClick={() => choose('si')}
+                className="flex-1 bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold py-3.5 rounded-xl text-sm transition-colors active:scale-95 flex items-center justify-center gap-2 font-sinhala-body"
+              >
+                <span className="text-lg">🇱🇰</span> සිංහල
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 }
