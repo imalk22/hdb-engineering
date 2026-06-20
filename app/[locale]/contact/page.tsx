@@ -134,16 +134,15 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════ */}
-      <div className="bg-navy">
-      <section className="relative overflow-hidden pt-24 pb-4 sm:pt-32 sm:pb-52 px-4">
-        {/* Background orbs */}
+      <div className="bg-navy relative overflow-hidden">
+        {/* Background orbs — cover hero + cards */}
         <div className="absolute -top-32 -left-32 w-[600px] h-[600px] bg-royal/20 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-electric/15 rounded-full blur-[100px] pointer-events-none" />
-
         {/* Grid mesh */}
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{ backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
 
+      <section className="relative pt-24 pb-4 sm:pt-32 sm:pb-52 px-4">
         <div className="relative max-w-4xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <span className="inline-block bg-orange/15 text-orange text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 border border-orange/20">
