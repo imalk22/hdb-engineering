@@ -86,6 +86,13 @@ export default function Navbar({ locale }: { locale: string }) {
           </a>
         </div>
 
+        {/* Mobile language toggle */}
+        <div className="lg:hidden flex items-center border border-gray-200 rounded-lg overflow-hidden text-[11px] font-bold flex-shrink-0">
+          <Link href="/en" className={`px-2.5 py-1.5 transition-colors ${locale === 'en' ? 'bg-navy text-white' : 'text-gray-400 hover:text-navy'}`}>ENG</Link>
+          <div className="w-px h-3.5 bg-gray-200" />
+          <Link href="/si" className={`px-2.5 py-1.5 transition-colors ${locale === 'si' ? 'bg-navy text-white' : 'text-gray-400 hover:text-navy'}`}>SIN</Link>
+        </div>
+
         {/* Mobile hamburger */}
         <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden p-2 rounded-lg text-navy transition-colors hover:bg-gray-100" aria-label="Menu">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
