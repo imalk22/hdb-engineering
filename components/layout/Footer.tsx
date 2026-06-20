@@ -15,7 +15,7 @@ const TRUST_ITEMS = [
 
 export default function Footer({ locale = 'si' }: { locale?: string }) {
   return (
-    <footer className="bg-navy text-blue-200 mt-12">
+    <footer className="bg-navy text-blue-200 mt-6 sm:mt-12">
 
       {/* ── Marquee trust strip ── */}
       <div className="bg-blue-950 py-2 overflow-hidden">
@@ -28,19 +28,19 @@ export default function Footer({ locale = 'si' }: { locale?: string }) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 sm:py-8 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-7">
 
         {/* Brand */}
-        <div className="lg:col-span-1">
+        <div className="sm:col-span-1">
           <Image
             src="/logo.png"
             alt="HDB Engineering Lanka"
             width={260}
             height={82}
-            className="h-20 w-auto object-contain mb-3"
+            className="h-14 sm:h-20 w-auto object-contain mb-2 sm:mb-3"
           />
           <p className="text-sm leading-relaxed mb-0.5">{COMPANY.tagline}</p>
-          <p className="text-xs font-sinhala-body text-blue-300">{COMPANY.taglineSi}</p>
+          <p className="text-xs font-sinhala-body text-blue-300 hidden sm:block">{COMPANY.taglineSi}</p>
           <div className="flex gap-2.5 mt-3">
             {[
               { href: CONTACT.facebook,  src: '/fb.png',    label: 'Facebook' },
@@ -60,14 +60,15 @@ export default function Footer({ locale = 'si' }: { locale?: string }) {
         <div>
           <h4 className="text-white font-bold text-sm mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
-            {[['Home',`/${locale}`],['Machines',`/${locale}/machines`],['About Us',`/${locale}/about`],['Contact',`/${locale}/contact`],['FAQ',`/${locale}/contact`]].map(([label,href])=>(
+            {[['Home',`/${locale}`],['Machines',`/${locale}/machines`],['About Us',`/${locale}/about`],['Contact',`/${locale}/contact`]].map(([label,href])=>(
               <li key={label}><Link href={href} className="hover:text-white hover:translate-x-1 inline-block transition-all">{label}</Link></li>
             ))}
+            <li className="hidden sm:block"><Link href={`/${locale}/contact`} className="hover:text-white hover:translate-x-1 inline-block transition-all">FAQ</Link></li>
           </ul>
         </div>
 
-        {/* Categories */}
-        <div>
+        {/* Categories — hidden on mobile */}
+        <div className="hidden sm:block">
           <h4 className="text-white font-bold text-sm mb-3">Machines</h4>
           <ul className="space-y-1.5 text-sm">
             {[
@@ -90,11 +91,11 @@ export default function Footer({ locale = 'si' }: { locale?: string }) {
         {/* Contact */}
         <div>
           <h4 className="text-white font-bold text-sm mb-3">Contact Us</h4>
-          <address className="not-italic space-y-2.5 text-sm">
+          <address className="not-italic space-y-2 sm:space-y-2.5 text-sm">
             <p className="leading-snug">📍 {CONTACT.address}, Sri Lanka</p>
             <p>📞 <a href={`tel:${CONTACT.phone1}`} className="hover:text-white transition-colors font-medium">{CONTACT.phone1Display}</a></p>
             <p>📞 <a href={`tel:${CONTACT.phone2}`} className="hover:text-white transition-colors font-medium">{CONTACT.phone2Display}</a></p>
-            <p>✉️ <a href={`mailto:${CONTACT.email}`} className="hover:text-white transition-colors break-all">{CONTACT.email}</a></p>
+            <p className="hidden sm:block">✉️ <a href={`mailto:${CONTACT.email}`} className="hover:text-white transition-colors break-all">{CONTACT.email}</a></p>
           </address>
           <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 mt-3 bg-whatsapp text-white text-xs font-bold px-3.5 py-2 rounded-xl hover:bg-green-500 transition-colors btn-press">
@@ -103,7 +104,7 @@ export default function Footer({ locale = 'si' }: { locale?: string }) {
         </div>
       </div>
 
-      <div className="border-t border-blue-900 py-3.5 text-center text-xs text-blue-400">
+      <div className="border-t border-blue-900 py-3 text-center text-xs text-blue-400">
         © {new Date().getFullYear()} {COMPANY.name}. All rights reserved.
       </div>
     </footer>

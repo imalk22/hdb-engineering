@@ -172,13 +172,13 @@ export default function AboutPage() {
           </motion.p>
 
           <motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.7,delay:.45}}
-            className="flex flex-col sm:flex-row gap-4 justify-center">
+            className="flex flex-row gap-2 sm:gap-4 justify-center">
             <Link href="/si/liquid-machine"
-              className="flex items-center justify-center gap-2 bg-orange text-white font-bold px-8 py-4 rounded-2xl btn-press shadow-xl shadow-orange/30">
+              className="flex items-center justify-center gap-2 bg-orange text-white font-bold px-4 py-2.5 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base btn-press shadow-xl shadow-orange/30">
               🔥 Our Best Seller
             </Link>
             <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-8 py-4 rounded-2xl btn-press shadow-lg shadow-[#25D366]/30 transition-colors">
+              className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-4 py-2.5 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-base btn-press shadow-lg shadow-[#25D366]/30 transition-colors">
               💬 WhatsApp Us
             </a>
           </motion.div>
@@ -188,7 +188,7 @@ export default function AboutPage() {
 
       {/* ── STATS ────────────────────────────────────────── */}
       <section className="relative z-10 max-w-5xl mx-auto px-4 -mt-20 sm:-mt-36 pb-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-2 sm:gap-4">
           {STATS.map((s,i) => (
             <motion.div
               key={s.label}
@@ -196,20 +196,20 @@ export default function AboutPage() {
               animate={{ opacity:1, y:0, scale:1 }}
               transition={{ duration:.65, delay:.15 + i*.1, ease:[.22,1,.36,1] }}
               whileHover={{ y:-6, scale:1.03 }}
-              className={`relative overflow-hidden rounded-3xl p-3 sm:p-6 text-center border border-white/20 bg-gradient-to-br ${s.gradient} backdrop-blur-xl`}
+              className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-1.5 sm:p-6 text-center border border-white/20 bg-gradient-to-br ${s.gradient} backdrop-blur-xl`}
             >
               {/* inner glow top */}
-              <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-3xl"/>
-              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-white/10 border border-white/20 mb-3 sm:mb-4 ${s.accent}`}>
+              <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-2xl sm:rounded-3xl"/>
+              <div className={`hidden sm:inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 border border-white/20 mb-4 ${s.accent}`}>
                 {s.icon}
               </div>
-              <div className="text-2xl sm:text-4xl font-extrabold text-white mb-1 leading-none tracking-tight"
+              <div className="text-base sm:text-4xl font-extrabold text-white mb-0.5 sm:mb-1 leading-none tracking-tight"
                 style={{ textShadow: '0 1px 8px rgba(0,0,0,0.55), 0 0 24px rgba(0,0,0,0.35)' }}>
                 <Counter to={s.num} suffix={s.suffix}/>
               </div>
-              <p className="text-white/90 text-sm font-semibold leading-snug"
+              <p className="text-white/90 text-[9px] sm:text-sm font-semibold leading-snug"
                 style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' }}>{s.label}</p>
-              <p className={`text-xs font-sinhala-body mt-1 ${s.accent} opacity-80`}
+              <p className={`hidden sm:block text-xs font-sinhala-body mt-1 ${s.accent} opacity-80`}
                 style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>{s.labelSi}</p>
             </motion.div>
           ))}
@@ -274,7 +274,7 @@ export default function AboutPage() {
 
           <div className="relative">
             {/* Center line */}
-            <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange via-navy to-blue-300 hidden lg:block"/>
+            <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange via-navy to-blue-300"/>
 
             <div className="flex flex-col gap-10">
               {TIMELINE.map((item,i) => (
@@ -308,16 +308,16 @@ export default function AboutPage() {
             <span className="inline-block bg-orange text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">What Drives Us</span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Our Core Principles</h2>
           </Reveal>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-2 sm:gap-6">
             {VALUES.map((v,i) => (
               <Reveal key={v.title} delay={i*.1} variants={scaleIn}>
                 <motion.div whileHover={{y:-8}} transition={{type:'spring',stiffness:300,damping:20}}
-                  className="bg-white/10 backdrop-blur border border-white/15 rounded-3xl p-7 h-full">
-                  <div className="text-3xl sm:text-5xl mb-3 sm:mb-4">{v.icon}</div>
-                  <h3 className="text-white font-extrabold text-base sm:text-xl mb-0.5">{v.title}</h3>
-                  <p className="text-blue-300 text-xs font-sinhala-body mb-3">{v.titleSi}</p>
-                  <p className="text-blue-100 text-sm leading-relaxed mb-2">{v.desc}</p>
-                  <p className="text-blue-300 text-xs font-sinhala-body leading-relaxed">{v.si}</p>
+                  className="bg-white/10 backdrop-blur border border-white/15 rounded-2xl sm:rounded-3xl p-2 sm:p-7 h-full">
+                  <div className="text-xl sm:text-5xl mb-1 sm:mb-4">{v.icon}</div>
+                  <h3 className="text-white font-extrabold text-[10px] sm:text-xl mb-0 sm:mb-0.5">{v.title}</h3>
+                  <p className="hidden sm:block text-blue-300 text-xs font-sinhala-body mb-3">{v.titleSi}</p>
+                  <p className="hidden sm:block text-blue-100 text-sm leading-relaxed mb-2">{v.desc}</p>
+                  <p className="hidden sm:block text-blue-300 text-xs font-sinhala-body leading-relaxed">{v.si}</p>
                 </motion.div>
               </Reveal>
             ))}
@@ -333,16 +333,16 @@ export default function AboutPage() {
             <h2 className="text-4xl sm:text-5xl font-extrabold text-navy mb-3">Our Machine Categories</h2>
             <p className="text-gray-500 text-lg font-sinhala-body">ඔබේ ව්‍යාපාරය සඳහා නිවැරදි යන්ත්‍රය</p>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-4 gap-1.5 sm:gap-5">
             {SERVICES.map((s,i) => (
               <Reveal key={s.cat} delay={i*.06} variants={scaleIn}>
                 <motion.div whileHover={{y:-6,boxShadow:'0 20px 50px rgba(10,37,64,.1)'}}
                   transition={{type:'spring',stiffness:300,damping:20}}
-                  className="group bg-ice hover:bg-navy rounded-2xl p-5 border border-gray-100 cursor-default transition-colors duration-300 h-full">
-                  <span className="text-4xl mb-3 block group-hover:scale-110 transition-transform duration-300">{s.icon}</span>
-                  <h3 className="font-extrabold text-navy group-hover:text-white text-base mb-0.5 transition-colors">{s.cat}</h3>
-                  <p className="text-gray-400 group-hover:text-blue-200 text-xs font-sinhala-body mb-2 transition-colors">{s.si}</p>
-                  <p className="text-gray-600 group-hover:text-blue-100 text-xs leading-relaxed transition-colors">{s.desc}</p>
+                  className="group bg-ice hover:bg-navy rounded-xl sm:rounded-2xl p-1.5 sm:p-5 border border-gray-100 cursor-default transition-colors duration-300 h-full">
+                  <span className="text-lg sm:text-4xl mb-0.5 sm:mb-3 block group-hover:scale-110 transition-transform duration-300">{s.icon}</span>
+                  <h3 className="font-extrabold text-navy group-hover:text-white text-[8px] sm:text-base transition-colors">{s.cat}</h3>
+                  <p className="hidden sm:block text-gray-400 group-hover:text-blue-200 text-xs font-sinhala-body mb-2 transition-colors">{s.si}</p>
+                  <p className="hidden sm:block text-gray-600 group-hover:text-blue-100 text-xs leading-relaxed transition-colors">{s.desc}</p>
                 </motion.div>
               </Reveal>
             ))}
@@ -357,7 +357,7 @@ export default function AboutPage() {
             <span className="inline-block bg-whatsapp/10 text-whatsapp text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">Why Choose Us</span>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-navy mb-3 font-sinhala-body">ඇයි HDB විශ්වාස කළ යුත්තේ?</h2>
           </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-3 gap-1.5 sm:gap-5">
             {[
               {icon:'🏛',t:'Registered Company',  si:'නිල ලියාපදිංචි ආයතනය', d:'Officially registered private limited company in Sri Lanka'},
               {icon:'📋',t:'Legal Agreement',      si:'නිල නීතිමය ගිවිසුමක්',  d:'Every order comes with a legally binding written agreement'},
@@ -369,11 +369,11 @@ export default function AboutPage() {
               <Reveal key={c.t} delay={i*.08} variants={scaleIn}>
                 <motion.div whileHover={{y:-5,boxShadow:'0 16px 50px rgba(37,211,102,.1)'}}
                   transition={{type:'spring',stiffness:300,damping:20}}
-                  className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm">
-                  <span className="text-3xl mb-3 block">{c.icon}</span>
-                  <h3 className="font-extrabold text-navy text-base mb-0.5">{c.t}</h3>
-                  <p className="text-gray-400 text-xs font-sinhala-body mb-2">{c.si}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{c.d}</p>
+                  className="bg-white rounded-xl sm:rounded-2xl p-1.5 sm:p-5 border border-gray-100 shadow-sm">
+                  <span className="text-xl sm:text-3xl mb-0.5 sm:mb-3 block">{c.icon}</span>
+                  <h3 className="font-extrabold text-navy text-[9px] sm:text-base">{c.t}</h3>
+                  <p className="hidden sm:block text-gray-400 text-xs font-sinhala-body mb-2">{c.si}</p>
+                  <p className="hidden sm:block text-gray-600 text-sm leading-relaxed">{c.d}</p>
                 </motion.div>
               </Reveal>
             ))}
@@ -383,23 +383,23 @@ export default function AboutPage() {
 
 
       {/* ── BOTTOM CTA ───────────────────────────────────── */}
-      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy py-20 px-4 overflow-hidden text-center">
+      <section className="relative bg-gradient-to-br from-navy via-blue-900 to-navy py-10 sm:py-20 px-4 overflow-hidden text-center">
         <div className="absolute left-1/4 bottom-0 w-96 h-40 bg-whatsapp/20 rounded-full blur-3xl pointer-events-none"/>
         <div className="absolute right-1/4 bottom-0 w-96 h-40 bg-orange/20 rounded-full blur-3xl pointer-events-none"/>
         <Reveal className="relative max-w-2xl mx-auto">
-          <p className="text-blue-300 text-xs font-bold uppercase tracking-[.25em] mb-4">Ready to grow your business?</p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-8">
+          <p className="text-blue-300 text-xs font-bold uppercase tracking-[.25em] mb-3">Ready to grow your business?</p>
+          <h2 className="text-xl sm:text-5xl font-extrabold text-white mb-4 sm:mb-8">
             Visit Our <span className="text-orange">Showroom</span> Today
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-row gap-2 sm:gap-4 justify-center">
             <motion.a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer"
               whileHover={{scale:1.05}} whileTap={{scale:.97}}
-              className="flex items-center justify-center gap-2 bg-whatsapp text-white font-bold px-8 py-4 rounded-2xl text-lg shadow-xl shadow-whatsapp/30">
+              className="flex items-center justify-center gap-2 bg-whatsapp text-white font-bold px-4 py-2.5 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-lg shadow-xl shadow-whatsapp/30">
               💬 WhatsApp Pre-Order
             </motion.a>
             <motion.a href={`tel:${CONTACT.phone2}`}
               whileHover={{scale:1.05}} whileTap={{scale:.97}}
-              className="flex items-center justify-center gap-2 bg-orange text-white font-bold px-8 py-4 rounded-2xl text-lg shadow-xl shadow-orange/30">
+              className="flex items-center justify-center gap-2 bg-orange text-white font-bold px-4 py-2.5 sm:px-8 sm:py-4 rounded-xl sm:rounded-2xl text-sm sm:text-lg shadow-xl shadow-orange/30">
               📞 {CONTACT.phone2Display}
             </motion.a>
           </div>

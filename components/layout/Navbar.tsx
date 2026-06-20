@@ -86,13 +86,6 @@ export default function Navbar({ locale }: { locale: string }) {
           </a>
         </div>
 
-        {/* Mobile language toggle */}
-        <div className="lg:hidden flex items-center border border-gray-200 rounded-lg overflow-hidden text-[11px] font-bold flex-shrink-0">
-          <Link href="/en" className={`px-2.5 py-1.5 transition-colors ${locale === 'en' ? 'bg-navy text-white' : 'text-gray-400 hover:text-navy'}`}>ENG</Link>
-          <div className="w-px h-3.5 bg-gray-200" />
-          <Link href="/si" className={`px-2.5 py-1.5 transition-colors ${locale === 'si' ? 'bg-navy text-white' : 'text-gray-400 hover:text-navy'}`}>SIN</Link>
-        </div>
-
         {/* Mobile hamburger */}
         <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden p-2 rounded-lg text-navy transition-colors hover:bg-gray-100" aria-label="Menu">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +100,7 @@ export default function Navbar({ locale }: { locale: string }) {
       {menuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-2xl">
           <div className="px-6 py-4 flex flex-col gap-1">
-            {[['Home',base],['Liquid Machine 🔥',`${base}/liquid-machine`],['All Machines',`${base}/machines`],['About',`${base}/about`],['Our Clients',`${base}/clients`],['Contact',`/${locale}/contact`]].map(([label,href])=>(
+            {[['Home',base],['All Machines',`${base}/machines`],['About',`${base}/about`],['Our Clients',`${base}/clients`],['Contact',`/${locale}/contact`]].map(([label,href])=>(
               <Link key={label} href={href} onClick={()=>setMenuOpen(false)}
                 className="text-gray-700 text-base font-medium py-3 border-b border-gray-100 last:border-0 hover:text-navy transition-colors">
                 {label}
@@ -124,10 +117,14 @@ export default function Navbar({ locale }: { locale: string }) {
               </svg>
               Visit Our Showroom — Dambulla
             </a>
-            <Link href={locale === 'si' ? '/en' : '/si'}
-              className="flex items-center justify-center gap-2 border-2 border-navy text-navy font-bold py-3 rounded-xl text-sm hover:bg-navy hover:text-white transition-colors">
-              {locale === 'si' ? '🇬🇧 Switch to English' : '🇱🇰 සිංහලෙන් බලන්න'}
-            </Link>
+            <div className="flex items-center justify-between pt-1 border-t border-gray-100 mt-1">
+              <span className="text-xs text-gray-400 font-medium">Language</span>
+              <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden text-[11px] font-bold">
+                <Link href="/en" onClick={()=>setMenuOpen(false)} className={`px-3 py-1.5 transition-colors ${locale === 'en' ? 'bg-navy text-white' : 'text-gray-400'}`}>ENG</Link>
+                <div className="w-px h-4 bg-gray-200" />
+                <Link href="/si" onClick={()=>setMenuOpen(false)} className={`px-3 py-1.5 transition-colors ${locale === 'si' ? 'bg-navy text-white' : 'text-gray-400'}`}>SIN</Link>
+              </div>
+            </div>
           </div>
         </div>
       )}

@@ -20,7 +20,7 @@ function CountUp({ to, suffix = '' }: { to: number; suffix?: string }) {
 export default function HeroSection({ locale = 'en' }: { locale?: string }) {
   const si = locale === 'si'
   return (
-    <section className="relative min-h-screen bg-navy overflow-hidden flex items-center">
+    <section className="relative bg-navy overflow-hidden flex items-center sm:min-h-screen">
 
       {/* ── Background: mesh grid ── */}
       <div

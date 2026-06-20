@@ -301,7 +301,7 @@ export default function ClientsPage() {
 
       {/* ── STAT CARDS ───────────────────────────────────────── */}
       <section className="relative z-10 max-w-5xl mx-auto px-4 -mt-20 sm:-mt-36 pb-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-2 sm:gap-4">
           {STAT_CARDS.map((s, i) => (
             <motion.div
               key={s.label}
@@ -309,19 +309,19 @@ export default function ClientsPage() {
               animate={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
               transition={{ duration: .7, delay: .2 + i * .15, ease: [.22, 1, .36, 1] }}
               whileHover={{ y: -8, scale: 1.04 }}
-              className={`relative overflow-hidden rounded-3xl p-3 sm:p-6 text-center border border-white/20 bg-gradient-to-br ${s.gradient} backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.25)]`}
+              className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-1.5 sm:p-6 text-center border border-white/20 bg-gradient-to-br ${s.gradient} backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.25)]`}
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-3xl"/>
-              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-white/10 border border-white/20 mb-3 sm:mb-4 ${s.accent}`}>
+              <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-2xl sm:rounded-3xl"/>
+              <div className={`hidden sm:inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 border border-white/20 mb-4 ${s.accent}`}>
                 {s.icon}
               </div>
-              <div className="text-2xl sm:text-4xl font-extrabold text-white mb-1 leading-none tracking-tight"
+              <div className="text-base sm:text-4xl font-extrabold text-white mb-0.5 sm:mb-1 leading-none tracking-tight"
                 style={{ textShadow: '0 1px 8px rgba(0,0,0,0.55), 0 0 24px rgba(0,0,0,0.35)' }}>
                 {s.num}
               </div>
-              <p className="text-white/90 text-sm font-semibold leading-snug"
+              <p className="text-white/90 text-[9px] sm:text-sm font-semibold leading-snug"
                 style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4)' }}>{s.label}</p>
-              <p className={`text-xs font-sinhala-body mt-1 ${s.accent} opacity-80`}
+              <p className={`hidden sm:block text-xs font-sinhala-body mt-1 ${s.accent} opacity-80`}
                 style={{ textShadow: '0 1px 6px rgba(0,0,0,0.5)' }}>{s.labelSi}</p>
             </motion.div>
           ))}
@@ -344,7 +344,7 @@ export default function ClientsPage() {
           </Reveal>
 
           {/* ── Regular 16:9 videos ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-10 sm:mb-14">
             {SUCCESS_STORIES.filter(s => !s.isShort).map((story, i) => (
               <Reveal key={story.id} delay={i * 0.08} className="h-full">
                 <motion.div
@@ -386,7 +386,7 @@ export default function ClientsPage() {
               <div className="flex-1 h-px bg-gray-200"/>
             </div>
           </Reveal>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-2 sm:gap-4">
             {SUCCESS_STORIES.filter(s => s.isShort).map((story, i) => (
               <Reveal key={story.id} delay={i * 0.07} className="h-full">
                 <motion.div
@@ -425,21 +425,21 @@ export default function ClientsPage() {
           <div className="relative bg-navy rounded-3xl overflow-hidden">
             {/* Gradient top accent */}
             <div className="h-[3px] bg-gradient-to-r from-electric via-orange to-whatsapp" />
-            <div className="px-6 py-8 grid grid-cols-2 sm:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+            <div className="px-2 sm:px-6 py-3 sm:py-8 grid grid-cols-5 divide-x divide-white/10">
               {TRUST_STRIP.map((item) => (
-                <div key={item.label} className="flex flex-col items-center gap-3 text-center px-4 py-4 sm:py-0 group">
+                <div key={item.label} className="flex flex-col items-center gap-1 sm:gap-3 text-center px-1 sm:px-4 py-1 sm:py-0 group">
                   {/* Icon bubble */}
-                  <div className={`w-12 h-12 ${item.iconBg} rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
-                    {item.icon}
+                  <div className={`w-7 h-7 sm:w-12 sm:h-12 ${item.iconBg} rounded-xl sm:rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 flex-shrink-0`}>
+                    <span className="scale-50 sm:scale-100 origin-center">{item.icon}</span>
                   </div>
                   {/* Stat */}
-                  <span className={`${item.color} font-extrabold text-2xl leading-none tracking-tight`}>
+                  <span className={`${item.color} font-extrabold text-sm sm:text-2xl leading-none tracking-tight`}>
                     {item.stat}
                   </span>
                   {/* Labels */}
                   <div>
-                    <p className="text-white text-sm font-bold leading-snug">{item.label}</p>
-                    <p className="text-blue-300/70 text-xs mt-0.5">{item.sub}</p>
+                    <p className="text-white text-[8px] sm:text-sm font-bold leading-snug">{item.label}</p>
+                    <p className="hidden sm:block text-blue-300/70 text-xs mt-0.5">{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -449,7 +449,7 @@ export default function ClientsPage() {
       </section>
 
       {/* ── REVIEW CTA ───────────────────────────────────── */}
-      <section className="py-20 px-4 bg-gradient-to-r from-navy via-blue-900 to-navy text-center relative overflow-hidden">
+      <section className="py-10 sm:py-20 px-4 bg-gradient-to-r from-navy via-blue-900 to-navy text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: 'radial-gradient(white 1px,transparent 1px)', backgroundSize: '24px 24px' }} />
         <motion.div animate={{ x:[0,30,0], y:[0,-20,0] }} transition={{ duration:9,repeat:Infinity,ease:'easeInOut' }}
@@ -461,25 +461,25 @@ export default function ClientsPage() {
           <p className="text-blue-300 text-xs uppercase tracking-widest font-bold mb-3">
             Ready to grow your business?
           </p>
-          <h2 className="text-2xl sm:text-5xl font-extrabold text-white mb-3">
+          <h2 className="text-lg sm:text-5xl font-extrabold text-white mb-2 sm:mb-3">
             Join Our <span className="text-whatsapp">500+</span> Happy Customers
           </h2>
-          <p className="text-blue-300 font-sinhala-body text-base mb-8">
+          <p className="hidden sm:block text-blue-300 font-sinhala-body text-base mb-8">
             ඔබේ ව්‍යාපාරය සඳහා නිවැරදි යන්ත්‍රය සොයා ගන්න — නොමිලේ Delivery, ස්ථාපනය සහ නෛතික ගිවිසුම
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-row gap-2 sm:gap-4 justify-center mt-3 sm:mt-0">
             <motion.a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }} whileTap={{ scale: .97 }}
-              className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-green-400 text-white font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-2xl text-base sm:text-lg shadow-xl shadow-whatsapp/30 transition-colors">
+              className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-green-400 text-white font-bold px-3 py-2 sm:px-10 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-lg shadow-xl shadow-whatsapp/30 transition-colors">
               💬 WhatsApp Pre-Order
             </motion.a>
             <motion.a href={`tel:${CONTACT.phone2}`}
               whileHover={{ scale: 1.05 }} whileTap={{ scale: .97 }}
-              className="flex items-center justify-center gap-2 bg-orange hover:bg-orange/90 text-white font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-2xl text-base sm:text-lg shadow-xl shadow-orange/30 transition-colors">
+              className="flex items-center justify-center gap-2 bg-orange hover:bg-orange/90 text-white font-bold px-3 py-2 sm:px-10 sm:py-4 rounded-xl sm:rounded-2xl text-xs sm:text-lg shadow-xl shadow-orange/30 transition-colors">
               📞 {CONTACT.phone2Display}
             </motion.a>
           </div>
-          <p className="text-blue-300/50 text-xs mt-6 font-sinhala-body">
+          <p className="hidden sm:block text-blue-300/50 text-xs mt-6 font-sinhala-body">
             ✅ නොමිලේ Delivery · ✅ නොමිලේ Installation · ✅ Legal Agreement · ✅ 12-Month Warranty
           </p>
         </Reveal>
