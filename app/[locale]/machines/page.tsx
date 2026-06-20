@@ -15,8 +15,8 @@ export default async function MachinesPage({
   const si = locale === 'si'
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-extrabold text-navy mb-2 font-sinhala-display">
+    <div className="max-w-7xl mx-auto px-4 pt-20 sm:pt-24 pb-12">
+      <h1 className="text-2xl sm:text-3xl font-extrabold text-navy mb-2 font-sinhala-display">
         {si ? 'සියලු යන්ත්‍ර වර්ග' : 'All Machine Categories'}
       </h1>
       <p className="text-gray-500 text-sm mb-8 font-sinhala-body">

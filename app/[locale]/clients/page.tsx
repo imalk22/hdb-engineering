@@ -312,10 +312,10 @@ export default function ClientsPage() {
               className={`relative overflow-hidden rounded-3xl p-3 sm:p-6 text-center border border-white/20 bg-gradient-to-br ${s.gradient} backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.25)]`}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-3xl"/>
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 border border-white/20 mb-4 ${s.accent}`}>
+              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-white/10 border border-white/20 mb-3 sm:mb-4 ${s.accent}`}>
                 {s.icon}
               </div>
-              <div className="text-4xl font-extrabold text-white mb-1 leading-none tracking-tight"
+              <div className="text-2xl sm:text-4xl font-extrabold text-white mb-1 leading-none tracking-tight"
                 style={{ textShadow: '0 1px 8px rgba(0,0,0,0.55), 0 0 24px rgba(0,0,0,0.35)' }}>
                 {s.num}
               </div>
@@ -461,7 +461,7 @@ export default function ClientsPage() {
           <p className="text-blue-300 text-xs uppercase tracking-widest font-bold mb-3">
             Ready to grow your business?
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-3">
+          <h2 className="text-2xl sm:text-5xl font-extrabold text-white mb-3">
             Join Our <span className="text-whatsapp">500+</span> Happy Customers
           </h2>
           <p className="text-blue-300 font-sinhala-body text-base mb-8">
@@ -470,12 +470,12 @@ export default function ClientsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }} whileTap={{ scale: .97 }}
-              className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-green-400 text-white font-bold px-10 py-4 rounded-2xl text-lg shadow-xl shadow-whatsapp/30 transition-colors">
+              className="flex items-center justify-center gap-2 bg-whatsapp hover:bg-green-400 text-white font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-2xl text-base sm:text-lg shadow-xl shadow-whatsapp/30 transition-colors">
               💬 WhatsApp Pre-Order
             </motion.a>
             <motion.a href={`tel:${CONTACT.phone2}`}
               whileHover={{ scale: 1.05 }} whileTap={{ scale: .97 }}
-              className="flex items-center justify-center gap-2 bg-orange hover:bg-orange/90 text-white font-bold px-10 py-4 rounded-2xl text-lg shadow-xl shadow-orange/30 transition-colors">
+              className="flex items-center justify-center gap-2 bg-orange hover:bg-orange/90 text-white font-bold px-6 sm:px-10 py-3.5 sm:py-4 rounded-2xl text-base sm:text-lg shadow-xl shadow-orange/30 transition-colors">
               📞 {CONTACT.phone2Display}
             </motion.a>
           </div>

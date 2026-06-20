@@ -158,7 +158,7 @@ export default function AboutPage() {
           </motion.div>
 
           <motion.h1 initial={{opacity:0,y:35}} animate={{opacity:1,y:0}} transition={{duration:.75,delay:.1}}
-            className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
+            className="text-2xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight mb-6">
             Built for <span className="text-orange">Sri Lankan</span> Entrepreneurs
           </motion.h1>
 
@@ -200,10 +200,10 @@ export default function AboutPage() {
             >
               {/* inner glow top */}
               <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none rounded-3xl"/>
-              <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 border border-white/20 mb-4 ${s.accent}`}>
+              <div className={`inline-flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-white/10 border border-white/20 mb-3 sm:mb-4 ${s.accent}`}>
                 {s.icon}
               </div>
-              <div className="text-4xl font-extrabold text-white mb-1 leading-none tracking-tight"
+              <div className="text-2xl sm:text-4xl font-extrabold text-white mb-1 leading-none tracking-tight"
                 style={{ textShadow: '0 1px 8px rgba(0,0,0,0.55), 0 0 24px rgba(0,0,0,0.35)' }}>
                 <Counter to={s.num} suffix={s.suffix}/>
               </div>
@@ -223,8 +223,8 @@ export default function AboutPage() {
             <span className="inline-block bg-navy/8 text-navy text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">
               Our Story
             </span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy leading-tight mb-6">
-              From Dambulla to<br/><span className="text-orange">Island-wide</span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-navy leading-tight mb-6">
+              From Dambulla to <span className="text-orange">Island-wide</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-4" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, sans-serif" }}>
               HDB Engineering Lanka started with one simple belief: Sri Lankan small business owners deserve access to the same quality industrial machinery that large factories use — at fair prices, with honest service, and real after-sales support.
@@ -269,7 +269,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <Reveal className="text-center mb-14">
             <span className="inline-block bg-orange/10 text-orange text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">Our Journey</span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-navy">Growing Every Year</h2>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-navy">Growing Every Year</h2>
           </Reveal>
 
           <div className="relative">
@@ -306,15 +306,15 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <Reveal className="text-center mb-14">
             <span className="inline-block bg-orange text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4">What Drives Us</span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-white">Our Core Principles</h2>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white">Our Core Principles</h2>
           </Reveal>
           <div className="grid sm:grid-cols-3 gap-6">
             {VALUES.map((v,i) => (
               <Reveal key={v.title} delay={i*.1} variants={scaleIn}>
                 <motion.div whileHover={{y:-8}} transition={{type:'spring',stiffness:300,damping:20}}
                   className="bg-white/10 backdrop-blur border border-white/15 rounded-3xl p-7 h-full">
-                  <div className="text-5xl mb-4">{v.icon}</div>
-                  <h3 className="text-white font-extrabold text-xl mb-0.5">{v.title}</h3>
+                  <div className="text-3xl sm:text-5xl mb-3 sm:mb-4">{v.icon}</div>
+                  <h3 className="text-white font-extrabold text-base sm:text-xl mb-0.5">{v.title}</h3>
                   <p className="text-blue-300 text-xs font-sinhala-body mb-3">{v.titleSi}</p>
                   <p className="text-blue-100 text-sm leading-relaxed mb-2">{v.desc}</p>
                   <p className="text-blue-300 text-xs font-sinhala-body leading-relaxed">{v.si}</p>

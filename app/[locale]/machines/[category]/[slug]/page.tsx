@@ -36,7 +36,7 @@ export default async function ProductDetailPage({
     <div className="bg-white min-h-screen">
 
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="relative bg-navy overflow-hidden pt-28 pb-20 px-4">
+      <section className="relative bg-navy overflow-hidden pt-20 sm:pt-28 pb-10 sm:pb-20 px-4">
         <div className="absolute inset-0 opacity-[0.07] pointer-events-none"
           style={{ backgroundImage: 'linear-gradient(rgba(59,130,246,1) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,1) 1px,transparent 1px)', backgroundSize: '60px 60px' }} />
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-orange/8 rounded-full blur-3xl pointer-events-none" />
@@ -64,7 +64,7 @@ export default async function ProductDetailPage({
                 {si ? cat?.nameSi : cat?.nameEn}
               </span>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
+              <h1 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
                 {product.nameEn}
               </h1>
               <p className="text-blue-300 font-sinhala-body text-base mb-6 leading-relaxed">{product.nameSi}</p>

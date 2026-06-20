@@ -107,9 +107,20 @@ export default function Navbar({ locale }: { locale: string }) {
               </Link>
             ))}
             <a href={CONTACT.whatsappUrl} target="_blank" rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 bg-orange text-white font-bold py-3 rounded-xl text-sm">
+              className="mt-2 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold py-3 rounded-xl text-sm transition-colors">
               💬 WhatsApp Us
             </a>
+            <a href={CONTACT.mapsUrl} target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-navy text-white font-bold py-3 rounded-xl text-sm">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Visit Our Showroom — Dambulla
+            </a>
+            <Link href={locale === 'si' ? '/en' : '/si'}
+              className="flex items-center justify-center gap-2 border-2 border-navy text-navy font-bold py-3 rounded-xl text-sm hover:bg-navy hover:text-white transition-colors">
+              {locale === 'si' ? '🇬🇧 Switch to English' : '🇱🇰 සිංහලෙන් බලන්න'}
+            </Link>
           </div>
         </div>
       )}

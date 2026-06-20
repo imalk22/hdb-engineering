@@ -28,7 +28,7 @@ export default async function CategoryPage({
   const products = getProductsByCategory(category)
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 pt-20 sm:pt-24 pb-12">
       <div className="flex items-center gap-2 mb-2">
         <Link href={`/${locale}/machines`} className="text-sm text-gray-400 hover:text-navy">
           {si ? 'යන්ත්‍ර' : 'Machines'}
@@ -36,7 +36,7 @@ export default async function CategoryPage({
         <span className="text-gray-300">›</span>
         <span className="text-sm text-navy font-medium">{si ? cat.nameSi : cat.nameEn}</span>
       </div>
-      <h1 className="text-3xl font-extrabold text-navy mb-8 font-sinhala-display">
+      <h1 className="text-xl sm:text-3xl font-extrabold text-navy mb-6 sm:mb-8 font-sinhala-display">
         {cat.icon} {si ? cat.nameSi : cat.nameEn}
       </h1>
 
