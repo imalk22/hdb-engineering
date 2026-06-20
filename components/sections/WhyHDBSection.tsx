@@ -12,7 +12,7 @@ export default function WhyHDBSection() {
     <section className="bg-navy py-16 px-4">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-xl sm:text-4xl font-extrabold text-white font-sinhala-display leading-tight mb-3">
+          <h2 className="text-sm sm:text-4xl font-extrabold text-white font-sinhala-display leading-tight mb-3">
             ඇයි HDB Engineering Lanka තෝරාගත යුත්තේ?
           </h2>
           <span className="inline-flex items-center gap-2 bg-white/10 text-white font-bold text-sm px-4 py-2 rounded-full font-sinhala-body border border-white/20">

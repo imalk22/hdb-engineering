@@ -3,7 +3,7 @@ export default function ROISection() {
     <section className="bg-white py-16 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-xl sm:text-4xl font-extrabold text-navy font-sinhala-display leading-tight mb-2">
+          <h2 className="text-sm sm:text-4xl font-extrabold text-navy font-sinhala-display leading-tight mb-2">
             HDB ස්වයංක්‍රීය යන්ත්‍රයක් හරහා<br className="hidden sm:block" /> ඔබේ ව්‍යාපාරේ ආදායම් වැඩිකරන්නේ මෙහෙමයි
           </h2>
           <p className="text-orange font-bold text-lg font-sinhala-body">(Income Potential)</p>
