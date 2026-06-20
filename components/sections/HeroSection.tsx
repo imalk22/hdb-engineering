@@ -152,19 +152,19 @@ export default function HeroSection({ locale = 'en' }: { locale?: string }) {
               {/* ── Price card ── */}
               <div className="mt-1 sm:mt-4 relative">
                 {/* Floating discount pill */}
-                <div className="absolute -top-3.5 left-4 z-10 hidden sm:flex items-center gap-1.5 bg-orange text-white text-[11px] font-extrabold px-3 py-1 rounded-full shadow-lg shadow-orange/50">
-                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd"/></svg>
-                  20% OFF — Pre-Order Deal
+                <div className="absolute -top-3 left-2 sm:-top-3.5 sm:left-4 z-10 flex items-center gap-1 sm:gap-1.5 bg-orange text-white text-[8px] sm:text-[11px] font-extrabold px-2 py-0.5 sm:px-3 sm:py-1 rounded-full shadow-lg shadow-orange/50">
+                  <svg className="w-2 h-2 sm:w-3 sm:h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd"/></svg>
+                  20% OFF
                 </div>
 
                 <div className="bg-navy/80 backdrop-blur rounded-2xl border border-white/10 overflow-hidden">
                   {/* Gradient top accent */}
-                  <div className="hidden sm:block h-[2px] bg-gradient-to-r from-orange via-whatsapp to-electric" />
+                  <div className="block h-[2px] bg-gradient-to-r from-orange via-whatsapp to-electric" />
 
                   <div className="px-1.5 pt-1.5 pb-1 sm:px-5 sm:pt-4 sm:pb-3">
                     {/* Original price + label */}
                     <div className="flex items-center justify-between mb-1">
-                      <p className="hidden sm:block text-blue-300 text-[11px] font-medium font-sinhala-body">{si ? 'විශේෂ පූර්ව ඇණවුම් මිල' : 'Special Pre-Order Price'}</p>
+                      <p className="block text-blue-300 text-[7px] sm:text-[11px] font-medium font-sinhala-body">{si ? 'විශේෂ පූර්ව ඇණවුම් මිල' : 'Pre-Order Price'}</p>
                       <p className="text-white/50 text-[7px] sm:text-base font-bold line-through">LKR {FLAGSHIP.priceRegular.toLocaleString('en-LK')}</p>
                     </div>
                     {/* Offer price */}
@@ -172,15 +172,15 @@ export default function HeroSection({ locale = 'en' }: { locale?: string }) {
                       LKR {FLAGSHIP.priceOffer.toLocaleString('en-LK')}
                     </p>
                     {/* Full-width savings bar */}
-                    <div className="hidden sm:flex items-center gap-2.5 bg-whatsapp/15 border border-whatsapp/40 rounded-xl px-4 py-2.5">
-                      <svg className="w-5 h-5 text-whatsapp flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="flex items-center gap-1 sm:gap-2.5 bg-whatsapp/15 border border-whatsapp/40 rounded-lg sm:rounded-xl px-1.5 py-1 sm:px-4 sm:py-2.5">
+                      <svg className="hidden sm:block w-5 h-5 text-whatsapp flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
                       </svg>
                       <div>
-                        <p className="text-whatsapp font-extrabold text-xl leading-none tracking-tight">
+                        <p className="text-whatsapp font-extrabold text-[8px] sm:text-xl leading-none tracking-tight">
                           LKR {FLAGSHIP.priceSaving.toLocaleString('en-LK')} Saved!
                         </p>
-                        <p className="text-whatsapp/70 text-[10px] font-semibold mt-0.5 font-sinhala-body">{si ? 'ඔබ මෙම මුදල ඉතිරි කරගනු ලබයි' : 'You save this amount on pre-order'}</p>
+                        <p className="hidden sm:block text-whatsapp/70 text-[10px] font-semibold mt-0.5 font-sinhala-body">{si ? 'ඔබ මෙම මුදල ඉතිරි කරගනු ලබයි' : 'You save this amount on pre-order'}</p>
                       </div>
                     </div>
                   </div>
